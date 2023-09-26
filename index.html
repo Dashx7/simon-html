@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html>
 <head>
   <meta charset="UTF-8">
   <title>Gym Tracker</title>
@@ -12,6 +12,7 @@
       /* Text color for the header */
       padding: 10px 0;
       /* Add some padding for spacing */
+      font-family: Arial, sans-serif;
     }
 
     .nav-container {
@@ -40,109 +41,110 @@
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="nav-container">
-      <div class="nav-item"><a href="index.html">Login/Sign Up</a></div>
-      <div class="nav-item"><a href="track-stats.html">Track Stats</a></div>
-      <div class="nav-item"><a href="make-plans.html">Make Plans</a></div>
-      <div class="nav-item"><a href="orm-calculator.html">ORM Calculator</a></div>
-      <div class="nav-item"><a href="settings.html">Settings</a></div>
-    </div>
-  </header>
+  <!-- This is the standarized template-->
+  <div id="header-container"></div>
+  <script>
+    // Use JavaScript to load and insert the template into the page
+    fetch('template.html')
+        .then(response => response.text())
+        .then(template => {
+            document.getElementById('header-container').innerHTML = template;
+        });
+  </script>
+    
+    <!-- Other content for your webpage -->
+    <html>
 
-  <!-- Rest of your website content goes here -->
-  <html>
-
-  <title>Login/Register</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-    }
-
-    .container {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      text-align: center;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-    }
-
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #3498db;
-      color: #fff;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-      margin-top: 10px;
-      /* Add margin at the top to space out buttons */
-    }
-
-    button:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
-  </style>
-
-  <body>
-    <div class="container">
-      <h2>Login/Register</h2>
-      <form id="loginForm">
-        <input type="text" id="email" placeholder="Email">
-        <input type="password" id="password" placeholder="Password">
-        <button id="loginButton" disabled>Login</button>
-        <button id="registerButton" disabled>Register</button>
-      </form>
-    </div>
-
-    <script> // Get references to the form elements, allows me to manipulate buttons
-      const emailInput = document.getElementById("email");
-      const passwordInput = document.getElementById("password");
-      const loginButton = document.getElementById("loginButton");
-      const registerButton = document.getElementById("registerButton");
-
-      // Enable login and register buttons when both fields are filled
-      emailInput.addEventListener("input", toggleButtons);
-      passwordInput.addEventListener("input", toggleButtons);
-
-      function toggleButtons() {
-        const emailValue = emailInput.value.trim();
-        const passwordValue = passwordInput.value.trim();
-
-        loginButton.disabled = !(emailValue && passwordValue);
-        registerButton.disabled = !(emailValue && passwordValue);
+    <title>Login/Register</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
       }
-
-      // Add event listeners for login and register actions
-      loginButton.addEventListener("click", function (e) {
-        e.preventDefault();
-        // Add your login logic here
-        alert("Login successful!");
-        window.location.href = "https://simon.joshwiseman.click/track-stats.html";
-      });
-
-      registerButton.addEventListener("click", function (e) {
-        e.preventDefault();
-        // Add your register logic here
-        alert("Thanks for Registering!");
-        window.location.href = "https://simon.joshwiseman.click/track-stats.html";
-      });
-    </script>
-  </body>
-
-  </html>
+  
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+  
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+  
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-top: 10px;
+        /* Add margin at the top to space out buttons */
+      }
+  
+      button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    </style>
+  
+    <body>
+      <div class="container">
+        <h2>Login/Register</h2>
+        <form id="loginForm">
+          <input type="text" id="email" placeholder="Email">
+          <input type="password" id="password" placeholder="Password">
+          <button id="loginButton" disabled>Login</button>
+          <button id="registerButton" disabled>Register</button>
+        </form>
+      </div>
+  
+      <script> // Get references to the form elements, allows me to manipulate buttons
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+        const loginButton = document.getElementById("loginButton");
+        const registerButton = document.getElementById("registerButton");
+  
+        // Enable login and register buttons when both fields are filled
+        emailInput.addEventListener("input", toggleButtons);
+        passwordInput.addEventListener("input", toggleButtons);
+  
+        function toggleButtons() {
+          const emailValue = emailInput.value.trim();
+          const passwordValue = passwordInput.value.trim();
+  
+          loginButton.disabled = !(emailValue && passwordValue);
+          registerButton.disabled = !(emailValue && passwordValue);
+        }
+  
+        // Add event listeners for login and register actions
+        loginButton.addEventListener("click", function (e) {
+          e.preventDefault();
+          // Add your login logic here
+          alert("Login successful!");
+          window.location.href = "https://simon.joshwiseman.click/track-stats.html";
+        });
+  
+        registerButton.addEventListener("click", function (e) {
+          e.preventDefault();
+          // Add your register logic here
+          alert("Thanks for Registering!");
+          window.location.href = "https://simon.joshwiseman.click/track-stats.html";
+        });
+      </script>
+  
+    </html>
+</body>
+</html>
