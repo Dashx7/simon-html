@@ -3,64 +3,39 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Gym Tracker</title>
-    <link rel="icon" type="image/ico" href="/favicon.ico"> <!--FIXME-->
+    <title>Template</title>
+    <link rel="icon" type="image/ico" href="/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        .stickyfooter {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        a {
-            color: white;
-        }
+        body {
+        background-image: url("images/Backgrounds/Hex.jpg");
+        background-size: cover;
+        background-repeat: repeat;
+        background-position: center center;
+        background-position: top left;
 
-        header {
-            background-color: #333;
-            /* Background color for the header */
-            color: #fff;
-            /* Text color for the header */
-            padding: 10px 0;
-            /* Add some padding for spacing */
-            font-family: Arial, sans-serif;
-        }
-
-        .nav-container {
-            display: flex;
-            /* Use flexbox for equally spaced items */
-            justify-content: space-between;
-            /* Space items evenly */
-            padding: 0 20px;
-            /* Add padding to the sides of the navigation bar */
-        }
-
-        .nav-item {
-            background-color: #555;
-            /* Background color for each boxed heading */
-            padding: 10px 20px;
-            /* Add padding inside each boxed heading */
-            border-radius: 5px;
-            /* Rounded corners for boxed headings */
-        }
-
-        .nav-item a {
-            text-decoration: none;
-            /* Remove underlines from links */
-            color: #fff;
-            /* Text color for links */
-        }
-        p, a {
-            display: inline-block;
-            vertical-align: middle;
-        }
-    </style>
+    }    
+    </style> 
 </head>
 
 <body>
+    <script>
+        // Array of image URLs
+        var images = [
+            "images/Backgrounds/BrightWallpaper.png",
+            "images/Backgrounds/Hex.jpg",
+            "images/Backgrounds/Grunge.jpg",
+            "images/Backgrounds/TimeForFitness.jpg"
+        ];
+
+        // Randomly select an image from the array
+        var randomIndex = Math.floor(Math.random() * images.length);
+        var randomImage = images[randomIndex];
+
+        // Set the background image of the body element
+        document.body.style.backgroundImage = "url('images/Backgrounds/BrightWallpaper.png')";
+        document.body.style.backgroundImage = "url(" + randomImage + ")";
+    </script>
     <header>
         <div class="nav-container">
             <div class="nav-item"><a href="index.html">Login/Sign Up</a></div>
@@ -69,10 +44,7 @@
             <div class="nav-item"><a href="orm-calculator.html">ORM Calculator</a></div>
             <div class="nav-item"><a href="settings.html">Settings</a></div>
         </div>
-    </header>
-
-    <!-- Page-specific content goes here -->
-
+    </header>    
     <footer class="stickyfooter">
         <p>Visit my GitHub profile:</p>
         <a href="https://github.com/Dashx7/Startup">https://github.com/Dashx7/Startup</a>

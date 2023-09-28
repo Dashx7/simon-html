@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>Activity Tracker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
   <style>
     /* Add some basic styles for the page layout */
     body {
@@ -25,6 +26,12 @@
 
     #right-container {
       flex: 2;
+      float: right;
+      margin-top: -50px;
+      margin-left: 10px;
+      padding: 5px; 
+      max-width: 100%; 
+      height: auto;
     }
 
     button {
@@ -57,12 +64,13 @@
     }
 
     h1 {
-      display: block;
+      display: inline;
     }
 
     .content {
-      display: block;
+      display: inline;
     }
+
   </style>
 </head>
 
@@ -84,7 +92,7 @@
       <button id="viewButton">View</button>
     </div>
     <div id="right-container">
-      <img src="your_large_image.jpg" alt="Large Image" style="max-width: 100%; height: auto;">
+      <img src="images/Graph.jpg" alt="Large Image">
     </div>
 
     <!-- Modal for adding activity -->
